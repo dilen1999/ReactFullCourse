@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form input:first-child {
+  margin-top: 20px;
+}
+
+.form input {
+  border: 1px solid #cccccc;
+  padding: 10px 12px;
+  outline: none;
+  margin-bottom: 12px;
+  width: 200px;
+}
+
+.form button {
+  background-color: aqua;
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 12px;
+  margin: 10px;
+}
+
+table button {
+  border: none;
+  outline: none;
+  background: yellow;
+  padding: 6px 10px;
+  margin: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+table button:last-child {
+  background-color: red;
+}
