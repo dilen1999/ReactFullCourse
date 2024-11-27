@@ -4,6 +4,7 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [buttonState, setButtonState] = useState("Add");
   const [userInfo, setUserInfo] = useState({
     id: uuid(),
     name: "",
@@ -42,6 +43,11 @@ function App() {
     });
   };
 
+  const startEditing = (id) => {
+    setUserInfo(user);
+    setButtonState("Edit");
+  };
+
   return (
     <div className="container">
       <div className="form">
@@ -77,7 +83,14 @@ function App() {
           onChange={handleChange}
         />
         <br />
-        <button onClick={addData}>Add</button>
+        {buttonState === "Add" ? (
+          <button onClick={addData}>Add</button>
+        ) : (
+          <div className="buttonContainer">
+            <button onClick={addData}>Update</button>
+            <button onClick={addData}>Cancel</button>
+          </div>
+        )}
       </div>
 
       <div className="dataTable">
@@ -100,7 +113,7 @@ function App() {
                   <td>{user.email}</td>
                   <td>{user.phone}</td>
                   <td>
-                    <button>Edit</button>
+                    <button onClick={() => startEditing(user)}>Edit</button>
                     <button onClick={() => deleteData(user.id)}>Delete</button>
                   </td>
                 </tr>

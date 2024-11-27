@@ -35,6 +35,17 @@ th {
   margin: 10px;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer button:last-child {
+  background-color: rgb(242, 150, 150);
+  margin-left: 10px;
+}
+
 table button {
   border: none;
   outline: none;
